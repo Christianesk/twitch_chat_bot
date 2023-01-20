@@ -12,6 +12,8 @@ import (
 	"regexp"
 	"strings"
 	"time"
+
+	"github.com/christianesk/handle_messages"
 )
 
 type BasicBot struct {
@@ -150,6 +152,8 @@ func (bb *BasicBot) HandleChat() error {
 				case "PRIVMSG":
 					msg := matches[3]
 					fmt.Printf("[%s] %s: %s\n", timeStamp(), userName, msg)
+					// Send Message to websocket client
+					handle_messages.SendMessageToGameClient(msg)
 
 					// parse commands from user message
 					cmdMatches := cmdRegex.FindStringSubmatch(msg)
@@ -198,6 +202,8 @@ func (bb *BasicBot) Say(msg string) error {
 // pre-specified channel, and then handle the chat. It will attempt to reconnect until it is told to
 // shut down, or is forcefully shutdown.
 func (bb *BasicBot) Start() {
+	// Start Websocket to client
+	go handle_messages.StartWebSocketToClient()
 	err := bb.ReadCredentials()
 	if nil != err {
 		fmt.Println(err)
@@ -206,6 +212,7 @@ func (bb *BasicBot) Start() {
 	}
 
 	for {
+
 		bb.Connect()
 		bb.JoinChannel()
 		err = bb.HandleChat()

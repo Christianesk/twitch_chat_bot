@@ -1,0 +1,6 @@
+github.com/christianesk/handle_messages v0.0.0-20230120212758-e5eaec4bce9d h1:16ji+zMuqaBYENJSGnV6yfGV1loegTNAEYdZcPG55vY=
+github.com/christianesk/handle_messages v0.0.0-20230120212758-e5eaec4bce9d/go.mod h1:mBfv9WrxSFVn5Cs1GyZOnHEsrujvHGDS2P8Jctw1kxE=
+github.com/gorilla/mux v1.8.0 h1:i40aqfkR1h2SlN9hojwV5ZA91wcXFOvkdNIeFDP5koI=
+github.com/gorilla/mux v1.8.0/go.mod h1:DVbg23sWSpFRCP0SfiEN6jmj59UnW/n46BH5rLB71So=
+github.com/gorilla/websocket v1.5.0 h1:PPwGk2jz7EePpoHN/+ClbZu8SPxiqlu12wZP/3sWmnc=
+github.com/gorilla/websocket v1.5.0/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/adAjf1fMHhE=
